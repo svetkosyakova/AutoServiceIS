@@ -1,0 +1,39 @@
+# Default text handling
+* text=auto
+
+# Markdown and text files
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+*.xml text eol=lf
+*.config text eol=lf
+
+# Microsoft Word documents
+*.doc binary
+*.docx binary
+*.dot binary
+*.dotx binary
+
+# Other Office documents
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.webp binary
+
+# Archives
+*.zip binary
+*.rar binary
+*.7z binary
