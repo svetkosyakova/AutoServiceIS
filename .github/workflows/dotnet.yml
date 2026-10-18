@@ -1,0 +1,30 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore
+      run: dotnet restore AutoServiceIS.Api/AutoServiceIS.Api.csproj
+
+    - name: Build
+      run: dotnet build AutoServiceIS.Api/AutoServiceIS.Api.csproj --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test AutoServiceIS.Api/AutoServiceIS.Api.csproj --configuration Release --no-build
